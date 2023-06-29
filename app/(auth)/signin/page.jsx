@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import { signIn } from "next-auth/react"
 
 const Login = () => {
   return (
@@ -8,6 +10,8 @@ const Login = () => {
             <input type="password"  placeholder='password'/>
             <button type='submit'>Login</button>
         </form>
+        <p>login with google</p>
+        <button onClick={()=>signIn("google",{callbackUrl:"/"})}>continue with google</button>
     </div>
   )
 }
